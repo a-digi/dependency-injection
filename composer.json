@@ -21,15 +21,5 @@
     "psr-4": {
       "AriAva\\DependencyInjection\\": "src/"
     }
-  },
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/a-digi/autowire.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/a-digi/contracts.git"
-    }
-  ]
+  }
 }
