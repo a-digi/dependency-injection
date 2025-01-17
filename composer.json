@@ -1,0 +1,35 @@
+{
+  "name": "a-digi/dependency-injection",
+  "description": "AriAva dependency injection feature",
+  "authors": [
+    {
+      "name": "Andet Tafa",
+      "email": "tafa.andet@googlemail.com"
+    }
+  ],
+  "version": "1.0.0",
+  "type": "library",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+    "php": ">=8.2",
+    "a-digi/autowire": "^1.0",
+    "a-digi/contracts": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "AriAva\\DependencyInjection\\": "src/"
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/a-digi/autowire.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/a-digi/contracts.git"
+    }
+  ]
+}
