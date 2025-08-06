@@ -11,6 +11,14 @@ use \SplFileInfo;
 
 final class Container implements ContainerInterface
 {
+    private const array POSSIBLE_PARAMETERS = [
+        'string',
+        'int',
+        'bool',
+        'float',
+        'array',
+    ];
+
     private array $initialized;
 
     public function __construct(public array $bindings = [])
@@ -121,7 +129,13 @@ final class Container implements ContainerInterface
 
         foreach ($parameters as $parameter) {
             $reflectionClass = $parameter->getType();
-            $constructorArguments[] = $reflectionClass->getName();
+            $name = $reflectionClass->getName();
+
+            if (in_array($reflectionClass->getName(), self::POSSIBLE_PARAMETERS, true)) {
+                $name = $parameter->getName();
+            }
+
+            $constructorArguments[] = $name;
         }
 
         $this->add($dependencyKey, function () use ($autowireProxy, $constructorArguments) {
